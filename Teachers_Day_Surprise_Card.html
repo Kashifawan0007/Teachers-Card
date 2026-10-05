@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Teachers' Day — A Little Surprise</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:#070b1c;color:#fff;overflow-x:hidden;
+}
+#stars{position:fixed;inset:0;z-index:-3;background:
+ radial-gradient(circle at 20% 20%,rgba(115,92,255,.20),transparent 28%),
+ radial-gradient(circle at 80% 30%,rgba(0,210,255,.15),transparent 25%),
+ radial-gradient(circle at 50% 90%,rgba(255,77,166,.13),transparent 28%),#070b1c}
+#stars:before,#stars:after{content:"";position:absolute;inset:0;background-image:
+ radial-gradient(#fff 1px,transparent 1px),radial-gradient(#fff 1px,transparent 1px);
+ background-size:90px 90px,140px 140px;background-position:10px 20px,50px 80px;opacity:.22}
+#stars:after{animation:drift 30s linear infinite;opacity:.12}
+@keyframes drift{to{transform:translateY(90px)}}
+
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px 18px;position:relative}
+.card{
+ width:min(920px,100%);min-height:620px;border:1px solid rgba(255,255,255,.15);
+ border-radius:30px;padding:55px 28px;display:flex;align-items:center;justify-content:center;
+ text-align:center;position:relative;overflow:hidden;
+ background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.035));
+ box-shadow:0 30px 100px rgba(0,0,0,.5);backdrop-filter:blur(14px);
+}
+.card:before{content:"";position:absolute;width:380px;height:380px;border-radius:50%;
+background:radial-gradient(circle,rgba(105,92,255,.32),transparent 65%);top:-150px;right:-100px}
+.content{position:relative;z-index:2;max-width:720px}
+.badge{display:inline-block;padding:8px 15px;border:1px solid rgba(255,255,255,.2);
+border-radius:999px;background:rgba(255,255,255,.07);font-size:13px;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:clamp(42px,8vw,82px);line-height:.95;margin:24px 0 18px;
+background:linear-gradient(90deg,#fff,#9be7ff,#ff9ed5,#fff);background-size:300%;
+-webkit-background-clip:text;color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:300%}}
+.subtitle{font-size:clamp(17px,3vw,24px);color:#d9ddf4;line-height:1.6}
+.teacher-name{font-size:clamp(28px,5vw,48px);margin:15px 0;color:#fff;font-weight:800}
+button,.scroll-btn{border:0;cursor:pointer;color:#fff;font-weight:800;font-size:16px;
+padding:15px 25px;border-radius:999px;background:linear-gradient(135deg,#695cff,#d83cff);
+box-shadow:0 12px 35px rgba(115,92,255,.35);transition:.25s}
+button:hover,.scroll-btn:hover{transform:translateY(-3px) scale(1.02)}
+.actions{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.scroll-btn{display:inline-block;text-decoration:none;background:rgba(255,255,255,.09);
+border:1px solid rgba(255,255,255,.16);box-shadow:none}
+.hidden{display:none}
+.reveal{animation:reveal .8s ease both}
+@keyframes reveal{from{opacity:0;transform:translateY(30px) scale(.96)}to{opacity:1;transform:none}}
+
+.section{min-height:100vh;padding:90px 18px;display:flex;align-items:center;justify-content:center}
+.inner{width:min(1000px,100%);text-align:center}
+.section h2{font-size:clamp(35px,6vw,60px);margin-bottom:18px}
+.section p.lead{font-size:19px;line-height:1.8;color:#cbd1eb;max-width:700px;margin:0 auto 35px}
+.message{
+max-width:760px;margin:auto;padding:34px;border-radius:28px;background:rgba(255,255,255,.07);
+border:1px solid rgba(255,255,255,.13);font-size:20px;line-height:1.9;color:#f0f2ff;
+box-shadow:0 20px 60px rgba(0,0,0,.25)
+}
+.highlight{color:#aeeeff;font-weight:800}
+.signature{margin-top:24px;font-size:18px;color:#ffb8df}
+.quote{font-size:clamp(24px,4vw,38px);font-weight:700;line-height:1.4;margin:30px auto;max-width:800px}
+.footer{padding:35px 18px;text-align:center;color:#858da9;font-size:13px}
+.confetti{position:fixed;top:-20px;width:8px;height:14px;z-index:20;pointer-events:none;
+animation:fall linear forwards}
+@keyframes fall{to{transform:translate3d(var(--x),110vh,0) rotate(720deg);opacity:0}}
+.heart{position:absolute;font-size:25px;opacity:.7;animation:float 6s ease-in-out infinite}
+.h1{left:7%;top:15%}.h2{right:8%;top:25%;animation-delay:1s}.h3{left:12%;bottom:15%;animation-delay:2s}.h4{right:12%;bottom:12%;animation-delay:3s}
+@keyframes float{50%{transform:translateY(-25px) rotate(8deg)}}
+@media(max-width:600px){
+.card{min-height:570px;padding:45px 20px;border-radius:25px}
+.message{font-size:17px;padding:25px}
+}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+
+<section class="page" id="home">
+  <div class="card">
+    <span class="heart h1">💜</span><span class="heart h2">✨</span>
+    <span class="heart h3">🌸</span><span class="heart h4">💫</span>
+    <div class="content">
+      <div class="badge">05 October • Teachers' Day</div>
+      <h1>Wait…<br>There's a Surprise!</h1>
+      <p class="subtitle">A small digital card for someone who does something much bigger every day.</p>
+      <div class="actions">
+        <button id="openBtn">🎁 Open My Surprise</button>
+      </div>
+      <div id="teaser" class="hidden">
+        <div class="teacher-name">Dear Teacher ❤️</div>
+        <p class="subtitle">You don't just teach lessons… you help shape futures.</p>
+        <div class="actions"><a class="scroll-btn" href="#message">↓ Scroll for your message</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="message">
+  <div class="inner">
+    <div class="badge">A message from the heart</div>
+    <h2>Happy Teachers' Day! 🌟</h2>
+    <p class="lead">Some teachers teach a subject. The best teachers leave a lesson that stays for life.</p>
+    <div class="message">
+      <p>
+        Dear Teacher,<br><br>
+        Thank you for your patience, guidance and the effort you put into every student.
+        Your words may seem simple today, but they can become the reason a student succeeds tomorrow.
+        <br><br>
+        <span class="highlight">Thank you for believing in us, correcting us, and pushing us to become better.</span>
+        <br><br>
+        May you always have the respect you deserve, the happiness you give to others,
+        and the satisfaction of seeing your students succeed.
+      </p>
+      <div class="signature">With respect & gratitude,<br><strong>Regards, Kashif Aziz ❤️</strong></div>
+    </div>
+    <div class="quote">“A good teacher can change a classroom. A great teacher can change a life.”</div>
+    <button id="celebrate">🎉 One Last Surprise</button>
+  </div>
+</section>
+
+<div class="footer">Made with respect for every teacher who turns knowledge into confidence.</div>
+
+<script>
+const openBtn=document.getElementById("openBtn");
+const teaser=document.getElementById("teaser");
+openBtn.addEventListener("click",()=>{
+  openBtn.style.display="none";
+  teaser.classList.remove("hidden");
+  teaser.classList.add("reveal");
+  confetti(45);
+  setTimeout(()=>document.getElementById("message").scrollIntoView({behavior:"smooth"}),900);
+});
+
+document.getElementById("celebrate").addEventListener("click",()=>{
+  confetti(120);
+  const btn=document.getElementById("celebrate");
+  btn.textContent="❤️ Thank You, Teacher!";
+  btn.disabled=true;
+});
+
+function confetti(count){
+ for(let i=0;i<count;i++){
+   const c=document.createElement("i");
+   c.className="confetti";
+   c.style.left=Math.random()*100+"vw";
+   c.style.setProperty("--x",(Math.random()*240-120)+"px");
+   c.style.animationDuration=(2.5+Math.random()*3)+"s";
+   c.style.animationDelay=Math.random()*.8+"s";
+   c.style.transform=`rotate(${Math.random()*360}deg)`;
+   c.style.background=`hsl(${Math.random()*360},90%,70%)`;
+   document.body.appendChild(c);
+   setTimeout(()=>c.remove(),6000);
+ }
+}
+</script>
+</body>
+</html>
